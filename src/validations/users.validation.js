@@ -15,10 +15,10 @@ export const updateUserSchema = z.object({
         .optional(),
     email: z
         .string()
+        .trim()
+        .toLowerCase()
         .email({ message: 'Invalid email format' })
         .max(255, { message: 'Email must not exceed 255 characters' })
-        .toLowerCase()
-        .trim()
         .optional(),
     role: z
         .enum(['user', 'admin'], {
