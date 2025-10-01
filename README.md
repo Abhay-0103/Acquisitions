@@ -1,0 +1,1 @@
+An API project developed using Docker, Warp, Arcjet, with automated CI/CD, and a backend implemented with Node.js, Express.js, Neon Postgres, Drizzle ORM, and Zod—secure, scalable, and production-ready.
