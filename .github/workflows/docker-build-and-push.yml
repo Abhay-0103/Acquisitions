@@ -43,15 +43,10 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            # Branch-based tags
             type=ref,event=branch
-            # SHA-based tags
             type=sha,prefix={{branch}}-,format=short
-            # Latest tag for main branch
             type=raw,value=latest,enable={{is_default_branch}}
-            # Production timestamp tag
             type=raw,value=prod-{{date 'YYYYMMDD-HHmmss'}},enable={{is_default_branch}}
-            # Custom suffix if provided
             type=raw,value={{branch}}${{ inputs.tag_suffix && format('-{0}', inputs.tag_suffix) || '' }},enable=${{ inputs.tag_suffix != '' }}
           labels: |
             org.opencontainers.image.title=Acquisitions API
