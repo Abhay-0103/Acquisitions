@@ -19,13 +19,15 @@ const sql = neon(process.env.DATABASE_URL);
 
 const db = drizzle(sql);
 
-// Test database connection
-try {
-    logger.info('Testing database connection...');
-    await sql`SELECT 1 as test`;
-    logger.info('Database connection successful');
-} catch (error) {
-    logger.error('Database connection failed:', error);
+// Test database connection (skip during testing)
+if (process.env.NODE_ENV !== 'test') {
+    try {
+        logger.info('Testing database connection...');
+        await sql`SELECT 1 as test`;
+        logger.info('Database connection successful');
+    } catch (error) {
+        logger.error('Database connection failed:', error);
+    }
 }
 
 export { db, sql };
