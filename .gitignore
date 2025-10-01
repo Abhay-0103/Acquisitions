@@ -3,3 +3,7 @@ node_modules
 .env.development
 .env.production
 .neon_local/
+
+# Test coverage
+coverage/
+*.lcov
