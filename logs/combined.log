@@ -124,3 +124,22 @@
 {"level":"info","message":"Getting user by id: 2","service":"acquisitions-api"}
 {"level":"info","message":"User test@example.com retrieved successfully","service":"acquisitions-api"}
 {"level":"info","message":"::1 - - [01/Oct/2025:19:30:09 +0000] \"GET /api/users/2 HTTP/1.1\" 200 197 \"-\" \"curl/8.14.1\"","service":"acquisitions-api"}
+{"level":"info","message":"User hello@gmail.com authenticated successfully","service":"acquisitions-api"}
+{"level":"info","message":"User signed in successfully: hello@gmail.com","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [01/Oct/2025:19:31:38 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 113 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"level":"info","message":"User bhai@gmail.com created successfully","service":"acquisitions-api"}
+{"level":"info","message":"User registered successfully: bhai@gmail.com","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [01/Oct/2025:19:31:51 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 117 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"level":"info","message":"Hello from Acquisitions !","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [01/Oct/2025:19:35:34 +0000] \"GET / HTTP/1.1\" 200 27 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"acquisitions-api"}
+{"level":"info","message":"Connecting directly to Neon cloud database","service":"acquisitions-api"}
+{"level":"info","message":"Testing database connection...","service":"acquisitions-api"}
+{"level":"info","message":"Database connection successful","service":"acquisitions-api"}
+{"level":"info","message":"Connecting directly to Neon cloud database","service":"acquisitions-api"}
+{"level":"info","message":"Testing database connection...","service":"acquisitions-api"}
+{"level":"info","message":"Database connection successful","service":"acquisitions-api"}
+{"level":"info","message":"Connecting directly to Neon cloud database","service":"acquisitions-api"}
+{"level":"info","message":"Testing database connection...","service":"acquisitions-api"}
+{"level":"info","message":"Database connection successful","service":"acquisitions-api"}
+{"level":"error","message":"Error creating the user: Error: Failed query: select \"id\", \"name\", \"email\", \"password\", \"role\", \"created_at\", \"updated_at\" from \"users\" where \"users\".\"email\" = $1 limit $2\nparams: test@example.com,1","service":"acquisitions-api"}
+{"cause":{"name":"NeonDbError","sourceError":{}},"level":"error","message":"Signup error Failed query: select \"id\", \"name\", \"email\", \"password\", \"role\", \"created_at\", \"updated_at\" from \"users\" where \"users\".\"email\" = $1 limit $2\nparams: test@example.com,1","params":["test@example.com",1],"query":"select \"id\", \"name\", \"email\", \"password\", \"role\", \"created_at\", \"updated_at\" from \"users\" where \"users\".\"email\" = $1 limit $2","service":"acquisitions-api","stack":"Error: Failed query: select \"id\", \"name\", \"email\", \"password\", \"role\", \"created_at\", \"updated_at\" from \"users\" where \"users\".\"email\" = $1 limit $2\nparams: test@example.com,1\n    at NeonHttpPreparedQuery.queryWithCache (C:\\Users\\Abhay Singh\\Projects\\Acquisitions\\node_modules\\src\\pg-core\\session.ts:73:11)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at NeonHttpPreparedQuery.execute (C:\\Users\\Abhay Singh\\Projects\\Acquisitions\\node_modules\\src\\neon-http\\session.ts:83:18)\n    at createUser (C:\\Users\\Abhay Singh\\Projects\\Acquisitions\\src\\services\\auth.service.js:54:32)\n    at signup (C:\\Users\\Abhay Singh\\Projects\\Acquisitions\\src\\controllers\\auth.controller.js:22:22)"}
