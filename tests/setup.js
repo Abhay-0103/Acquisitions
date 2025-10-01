@@ -34,7 +34,10 @@ console.error = (message, ...args) => {
 
 console.log = (message, ...args) => {
   // Suppress winston logs during tests
-  if (typeof message === 'string' && (message.includes('error:') || message.includes('info:'))) {
+  if (
+    typeof message === 'string' &&
+    (message.includes('error:') || message.includes('info:'))
+  ) {
     return;
   }
   originalLog(message, ...args);

@@ -18,11 +18,13 @@ This guide explains how to run the Acquisitions API using Docker with different 
 ### Development Environment
 
 1. **Copy the development environment file:**
+
    ```bash
    cp .env.example .env.development
    ```
 
 2. **Configure `.env.development`:**
+
    ```env
    # Development Environment Configuration
    PORT=3000
@@ -49,11 +51,13 @@ This guide explains how to run the Acquisitions API using Docker with different 
 ### Production Environment
 
 1. **Create production environment file:**
+
    ```bash
    cp .env.example .env.production
    ```
 
 2. **Configure `.env.production`:**
+
    ```env
    # Production Environment Configuration
    PORT=3000
@@ -72,6 +76,7 @@ This guide explains how to run the Acquisitions API using Docker with different 
 ### Using Docker Compose (Recommended)
 
 1. **Start the development environment:**
+
    ```bash
    docker-compose -f docker-compose.dev.yml --env-file .env.development up --build
    ```
@@ -116,17 +121,20 @@ docker run --name acquisitions-dev -p 3000:3000 \
 ### Using Docker Compose
 
 1. **Set environment variables:**
+
    ```bash
    export DATABASE_URL="postgres://username:password@ep-example.us-east-1.aws.neon.tech/dbname?sslmode=require"
    export JWT_SECRET="your-super-secure-jwt-secret"
    ```
 
 2. **Start production environment:**
+
    ```bash
    docker-compose -f docker-compose.prod.yml up --build -d
    ```
 
 3. **Check logs:**
+
    ```bash
    docker-compose -f docker-compose.prod.yml logs -f
    ```
@@ -152,14 +160,14 @@ docker run -d --name acquisitions-prod -p 3000:3000 \
 
 ## Key Differences: Development vs Production
 
-| Feature | Development | Production |
-|---------|-------------|------------|
-| Database | Neon Local (Ephemeral branches) | Neon Cloud (Persistent) |
-| SSL Config | Self-signed certificates | Full SSL/TLS |
-| Connection | `postgres://neon:npg@neon-local:5432/...` | `postgres://...@*.neon.tech/...` |
-| Hot Reload | ✅ Enabled | ❌ Disabled |
-| User | root | non-root (nodejs) |
-| Health Checks | Basic | Comprehensive |
+| Feature       | Development                               | Production                       |
+| ------------- | ----------------------------------------- | -------------------------------- |
+| Database      | Neon Local (Ephemeral branches)           | Neon Cloud (Persistent)          |
+| SSL Config    | Self-signed certificates                  | Full SSL/TLS                     |
+| Connection    | `postgres://neon:npg@neon-local:5432/...` | `postgres://...@*.neon.tech/...` |
+| Hot Reload    | ✅ Enabled                                | ❌ Disabled                      |
+| User          | root                                      | non-root (nodejs)                |
+| Health Checks | Basic                                     | Comprehensive                    |
 
 ## Database Migration
 
@@ -178,10 +186,11 @@ docker exec -it acquisitions-app-prod npm run db:migrate
 ### Common Issues
 
 1. **Neon Local connection fails:**
+
    ```bash
    # Check if Neon Local is running
    docker logs acquisitions-neon-local
-   
+
    # Verify environment variables
    docker exec -it acquisitions-neon-local env | grep NEON
    ```
@@ -191,6 +200,7 @@ docker exec -it acquisitions-app-prod npm run db:migrate
    - Production: Ensure your DATABASE_URL includes `?sslmode=require`
 
 3. **Permission issues:**
+
    ```bash
    # Fix logs directory permissions
    chmod 755 ./logs
@@ -224,15 +234,18 @@ docker system prune -af
 ## Environment Variables Reference
 
 ### Required for Development
+
 - `NEON_API_KEY` - Your Neon API key
 - `NEON_PROJECT_ID` - Your Neon project ID
 - `PARENT_BRANCH_ID` - Branch to create ephemeral branches from
 
 ### Required for Production
+
 - `DATABASE_URL` - Full Neon Cloud connection string
 - `JWT_SECRET` - Secure JWT signing key
 
 ### Optional
+
 - `PORT` - Application port (default: 3000)
 - `LOG_LEVEL` - Logging level (debug, info, warn, error)
 - `DELETE_BRANCH` - Keep ephemeral branches after container stops (default: true)

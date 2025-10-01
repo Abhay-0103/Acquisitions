@@ -7,12 +7,12 @@
 const config = {
   // Support ES modules
   preset: null,
-  
+
   // Enable experimental VM modules
   globals: {
     'ts-jest': {
-      useESM: true
-    }
+      useESM: true,
+    },
   },
 
   // Automatically clear mock calls, instances, contexts and results before every test
@@ -23,19 +23,19 @@ const config = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    "src/**/*.js",
-    "!src/index.js", // Exclude entry point
-    "!src/server.js", // Exclude server startup
-    "!src/config/database.js", // Exclude database config (has async imports)
-    "!**/node_modules/**"
+    'src/**/*.js',
+    '!src/index.js', // Exclude entry point
+    '!src/server.js', // Exclude server startup
+    '!src/config/database.js', // Exclude database config (has async imports)
+    '!**/node_modules/**',
   ],
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
-  
+  coverageProvider: 'v8',
+
   // Module name mapping for path aliases
   moduleNameMapper: {
     '^#src/(.*)$': '<rootDir>/src/$1',
@@ -46,17 +46,11 @@ const config = {
     '^#routes/(.*)$': '<rootDir>/src/routes/$1',
     '^#services/(.*)$': '<rootDir>/src/services/$1',
     '^#utils/(.*)$': '<rootDir>/src/utils/$1',
-    '^#validations/(.*)$': '<rootDir>/src/validations/$1'
+    '^#validations/(.*)$': '<rootDir>/src/validations/$1',
   },
 
   // A list of reporter names that Jest uses when writing coverage reports
-  coverageReporters: [
-    "json",
-    "text",
-    "lcov",
-    "html",
-    "text-summary"
-  ],
+  coverageReporters: ['json', 'text', 'lcov', 'html', 'text-summary'],
 
   // An object that configures minimum threshold enforcement for coverage results
   coverageThreshold: {
@@ -64,15 +58,15 @@ const config = {
       branches: 30,
       functions: 35,
       lines: 35,
-      statements: 35
+      statements: 35,
     },
     // Higher thresholds for critical files
     './src/validations/*.js': {
       branches: 100,
       functions: 50,
       lines: 100,
-      statements: 100
-    }
+      statements: 100,
+    },
   },
 
   // A path to a custom dependency extractor
@@ -177,7 +171,7 @@ const config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  testEnvironment: 'node',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
