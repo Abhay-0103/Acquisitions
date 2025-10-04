@@ -77,13 +77,13 @@ acquisitions/
 
 ## Getting Started
 
-### Prerequisites
+## Prerequisites
 
 - Node.js v18+
 - Docker & Docker Compose
 - PostgreSQL (via Neon)
 
-### Installation
+## Installation
 
 ```bash
 git clone https://github.com/Abhay-0103/Acquisitions.git
@@ -92,7 +92,7 @@ npm install
 ```
 ---
 
-### Environment Variables
+## Environment Variables
 
 Create a .env file by copying .env.example and configure:
 ```bash
@@ -104,13 +104,12 @@ LOG_LEVEL=info
 
 ---
 
-### Docker Setup
+## Docker Setup
 Development
 ```bash
 docker-compose -f docker-compose.dev.yml up --build
 ```
 
----
 Production
 ```bash
 docker-compose -f docker-compose.prod.yml up --build -d
@@ -118,7 +117,7 @@ docker-compose -f docker-compose.prod.yml up --build -d
 
 ---
 
-### CI/CD
+## CI/CD
 
 The .github/workflows/ folder contains automated workflows for:
 
@@ -130,7 +129,7 @@ The .github/workflows/ folder contains automated workflows for:
 
 ---
 
-### Testing
+## Testing
 
 Run automated tests located in tests/:
 ```bash
@@ -139,7 +138,7 @@ npm test
 
 ---
 
-### Logging
+## Logging
 
 Application logs are stored in logs/. Configured with Winston for:
 
@@ -151,7 +150,7 @@ Application logs are stored in logs/. Configured with Winston for:
 
 ---
 
-### Contributing
+## Contributing
 
 1. Fork the repository
 
