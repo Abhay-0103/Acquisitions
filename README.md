@@ -16,7 +16,6 @@
 - [Testing](#testing)
 - [Logging](#logging)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -106,13 +105,14 @@ LOG_LEVEL=info
 ---
 
 ### Docker Setup
-```Development
+Development
+```bash
 docker-compose -f docker-compose.dev.yml up --build
 ```
 
 ---
-
-```Production
+Production
+```bash
 docker-compose -f docker-compose.prod.yml up --build -d
 ```
 
